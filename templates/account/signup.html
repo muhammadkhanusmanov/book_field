@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    {% load static socialaccount %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h2>Sign Up</h2>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="{% url 'account_signup' %}">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                        <div class="text-center mt-3">
+                            <a href="{% url 'account_login' %}">Already have an account? Login</a>
+                        </div>
+                        <hr>
+                        <div class="text-center mt-3">
+                            <a href="{% provider_login_url 'google' %}" class="btn btn-danger">Sign Up with Google</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
