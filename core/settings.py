@@ -58,6 +58,7 @@ AUTHENTICATION_BACKENDS = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
     ],
 }
 
@@ -78,6 +79,9 @@ SOCIALACCOUNT_PROVIDERS = {
 
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_REQUIRED = True
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db' 
+SESSION_COOKIE_SECURE = False
 
 TEMPLATES = [
     {
