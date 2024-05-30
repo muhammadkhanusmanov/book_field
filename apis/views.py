@@ -28,13 +28,13 @@ class RegisterUser(APIView):
         response = Response({'status': True,'token':token}, status=status.HTTP_201_CREATED)
         return response
 
-# class LoginUser(APIView):
-#     authentication_classes = [BasicAuthentication]
-#     permission_classes = [IsAuthenticated]
-#     def post(self, request):
-#         user = request.user
-#         token,created = Token.objects.get_or_create(user=user)
-#         return Response({'status':True, 'token':token})
+class LoginUser(APIView):
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+    def post(self, request):
+        user = request.user
+        token,created = Token.objects.get_or_create(user=user)
+        return Response({'status':True, 'token':token})
 
         
 
