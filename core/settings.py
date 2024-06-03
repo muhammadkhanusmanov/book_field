@@ -77,6 +77,9 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+AUTH_USER_MODELAUTH_USER_MODEL = 'apis.CustomUser'
+
+
 import os
 
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
