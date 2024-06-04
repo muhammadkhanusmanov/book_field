@@ -34,12 +34,9 @@ class LoginUser(APIView):
     def post(self, request):
         user = request.user
         token,created = Token.objects.get_or_create(user=user)
-        return Response({'status':True, 'token':token})
-
-        
+        return Response({'status':True, 'token':token}) 
 
 
-from rest_framework.permissions import AllowAny 
 
 class CustomAPIView(APIView):
     permission_classes = [IsAuthenticated]
