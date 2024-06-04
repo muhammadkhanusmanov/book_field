@@ -77,7 +77,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-AUTH_USER_MODELAUTH_USER_MODEL = 'apis.CustomUser'
+
 
 
 import os
